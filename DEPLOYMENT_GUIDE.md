@@ -15,10 +15,10 @@ This setup allows you to deploy both the Frontend and Backend automatically when
     - Go to [Vercel](https://vercel.com), click "Add New" > "Project".
     - Import your GitHub repo.
 3.  **Configure Build**: Vercel will automatically detect the Vite frontend. The [vercel.json](file:///Users/utkarshmakwana/Downloads/Whatsapppcom/vercel.json) file I've added will handle the Express backend routing.
-    - `VITE_META_APP_ID` = `1582499479528384`
-    - `META_APP_SECRET` = `82925cae2ab786c53bf2753b627bef6e`
-    - `META_WEBHOOK_VERIFY_TOKEN` = `wabiz_automation_secret`
-    - `CRON_SECRET` = `any_random_string_here`
+    - `VITE_META_APP_ID` = `[YOUR_META_APP_ID]`
+    - `META_APP_SECRET` = `[YOUR_META_APP_SECRET]`
+    - `META_WEBHOOK_VERIFY_TOKEN` = `[YOUR_WEBHOOK_VERIFY_TOKEN]`
+    - `CRON_SECRET` = `[YOUR_CRON_SECRET]` (Generate a random string)
 5.  **Hit Deploy**: Vercel will build and serve your app.
 
 ## 3. GitHub Actions Cron (FREE Plan)

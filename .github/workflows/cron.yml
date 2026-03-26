@@ -6,7 +6,7 @@ on:
 
 jobs:
   trigger-flows:
-    name: Proccess Automation Flows
+    name: Process Automation Flows
     runs-on: ubuntu-latest
     steps:
       - name: Hit Process Flows Endpoint

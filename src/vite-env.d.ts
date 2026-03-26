@@ -1,5 +1,4 @@
 /// <reference types="vite/client" />
-<<<<<<< HEAD
 
 interface ImportMetaEnv {
   readonly VITE_API_ADAPTER?: "mock" | "http" | "supabase";
@@ -15,5 +14,3 @@ interface ImportMetaEnv {
 interface ImportMeta {
   readonly env: ImportMetaEnv;
 }
-=======
->>>>>>> c444db471bbad9730b79c5546bdc0d731725dc5e

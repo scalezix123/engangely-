@@ -17,9 +17,16 @@ META_WEBHOOK_VERIFY_TOKEN="your-custom-verify-token"
 *Note: The `SUPABASE_SERVICE_ROLE_KEY` is required because the backend needs admin access to update tags and flow states independently of the logged-in user.*
 
 ### 3. Set up the Flow "Sweep" (Cron Job)
-The system uses a "Sweep" mechanism to process delayed messages (like the 2-hour wait). You need to hit this endpoint once every minute or 5 minutes:
+The system uses a "Sweep" mechanism to process delayed messages (like the 2-hour wait). You need to hit this endpoint once every 5 minutes:
 - **Endpoint**: `POST {{ROOT_URL}}/automation/process-flows`
-- **Auth**: Must include a valid `Bearer` token from a logged-in session in the header.
+- **Auth**: Must include the header `x-cron-secret: your-cron-secret`.
+
+#### GitHub Actions Setup
+For production, use the provided GitHub Action [cron.yml](file:///Users/utkarshmakwana/Downloads/Whatsapppcom/.github/workflows/cron.yml).
+1. Go to your GitHub Repository **Settings** > **Secrets and variables** > **Actions**.
+2. Add the following **Repository Secrets**:
+   - `VITE_API_BASE_URL`: Your deployed backend URL (e.g., `https://your-app.vercel.app`).
+   - `CRON_SECRET`: A long random string that matches the `CRON_SECRET` in your Vercel/production environment variables.
 
 ### 4. Meta Webhook URL
 Your Meta App must be configured to send webhooks to:
